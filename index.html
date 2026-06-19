@@ -159,7 +159,7 @@
     }
     .nav-links a:hover { color: var(--amber); }
     .btn-line-nav {
-      background: #06C755; color: white;
+      background: #06C755; color: white !important;
       padding: 9px 20px; border-radius: 50px;
       font-weight: 700; font-size: 16px;
       text-decoration: none; transition: opacity .2s;
@@ -167,7 +167,15 @@
     }
     .btn-line-nav:hover { opacity: 0.88; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: .2s; }
+    .nav-links.open {
+      display: flex !important; flex-direction: column;
+      position: absolute; top: 64px; left: 0; right: 0;
+      background: #FFF8EE; padding: 20px 24px;
+      border-bottom: 1px solid #F0D9A8;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      z-index: 99;
+    }
 
     /* ========== BUTTONS ========== */
     .btn-primary {
@@ -278,6 +286,7 @@
     }
     .text-center { text-align: center; }
     .text-center .section-sub { margin: 0 auto; }
+    .section-sub.text-center { margin-left: auto; margin-right: auto; }
 
     /* ========== WHO IS IT FOR ========== */
     .who { background: white; }
@@ -616,7 +625,7 @@
         💬 LINE @klomglom
       </a>
     </div>
-    <div class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex';document.querySelector('.nav-links').style.flexDirection='column';document.querySelector('.nav-links').style.position='absolute';document.querySelector('.nav-links').style.top='64px';document.querySelector('.nav-links').style.left='0';document.querySelector('.nav-links').style.right='0';document.querySelector('.nav-links').style.background='#FFF8EE';document.querySelector('.nav-links').style.padding='20px 24px';document.querySelector('.nav-links').style.borderBottom='1px solid #F0D9A8';">
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </div>
   </div>
@@ -633,7 +642,7 @@
         จากสมุนไพรจีนแท้
       </h1>
       <p class="hero-sub">
-        มอบความใส่ใจผ่านทุกถ้วย — ไก่บ้านคัดพิเศษ โสม เก๋ากี้ พุทราจีน<br />
+        มอบความใส่ใจผ่านทุกถ้วย — ไก่บ้านคัดพิเศษ พร้อมโสม เก๋ากี้ พุทราจีน<br />
         ไม่ใส่ผงปรุงรส ไม่เกลือ ไม่น้ำตาล เหมาะสำหรับผู้สูงอายุและของเยี่ยมไข้ที่ดีที่สุด
       </p>
       <div class="hero-badges">
@@ -698,7 +707,7 @@
         <div class="who-card-body">
           <h3>ห่วงใยพ่อแม่ด้วยของจริง</h3>
           <p>
-            เมื่อมีอายุมากขึ้น ร่างกายต้องการอาหารที่ย่อยง่าย มีคุณค่า และไม่เค็มเกินไป
+            เมื่อมีอายุมากขึ้น ร่างกายต้องการอาหารที่ย่อยง่าย และมีคุณค่า
             ซุปกลมกล่อมตอบโจทย์นี้ได้ทุกข้อ — เป็น<strong>ของฝาก</strong>ที่ใส่ใจที่สุดสำหรับพ่อแม่
           </p>
           <ul class="who-list">
@@ -730,7 +739,7 @@
             <li>ผู้สูงอายุที่อยากบำรุงร่างกายด้วยตัวเอง</li>
             <li>คนทำงานที่อยากฟื้นฟูสุขภาพแบบง่าย</li>
             <li>คุณแม่หลังคลอดที่ต้องการบำรุงร่างกาย</li>
-            <li>ทุกคนที่ใส่ใจในสิ่งที่กินเข้าปาก</li>
+            <li>คนที่ใส่ใจสุขภาพ</li>
           </ul>
         </div>
       </div>
@@ -767,7 +776,7 @@
         <p>เลือกใช้ไก่บ้านที่เนื้อแน่น รสชาติดี ให้โปรตีนสูง ไม่มีสารเร่งการเจริญเติบโต เหมาะสำหรับคนที่ใส่ใจแหล่งที่มาของอาหาร</p>
       </div>
       <div class="why-card">
-        <span class="why-icon">🥡</span>
+        <span class="why-icon">❄️</span>
         <h3>พร้อมทาน ส่งเย็น</h3>
         <p>มาพร้อมแพ็กเกจเก็บความเย็นที่ออกแบบมาเป็นพิเศษ สวยงาม ส่งได้ทั่วประเทศไทย ให้เป็นของขวัญหรือทานเองก็เหมาะ</p>
       </div>
@@ -789,7 +798,7 @@
           </svg>
         </span>
         <h3>ย่อยง่าย เหมาะผู้ป่วย</h3>
-        <p>เนื้อสัมผัสละเอียดอ่อน ย่อยง่ายมาก เหมาะสำหรับผู้ป่วย คนพักฟื้น ผู้สูงอายุ หรือใครก็ตามที่มีปัญหาระบบย่อยอาหาร</p>
+        <p>อร่อย ย่อยง่ายมาก เหมาะสำหรับผู้ป่วย คนพักฟื้น ผู้สูงอายุ หรือใครก็ตามที่มีปัญหาระบบย่อยอาหาร</p>
       </div>
     </div>
   </div>
@@ -872,8 +881,8 @@
           <div class="benefit-item">
             <div class="benefit-icon">🌿</div>
             <div class="benefit-text">
-              <h4>ย่อยง่าย ไม่อักเสบ</h4>
-              <p>ไม่เกลือ ไม่ปรุงรส ลดการอักเสบ ระบบย่อยอาหารทำงานได้ดีขึ้น</p>
+              <h4>ย่อยง่าย สบายท้อง</h4>
+              <p>ไม่เกลือ ไม่ปรุงรส ช่วยให้ระบบย่อยอาหารทำงานได้ดีขึ้น</p>
             </div>
           </div>
         </div>
@@ -1145,6 +1154,21 @@
 </footer>
 
 <script>
+  // Mobile nav toggle
+  function toggleNav() {
+    var nav = document.querySelector('.nav-links');
+    nav.classList.toggle('open');
+  }
+  // Close nav when any link is clicked
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.remove('open');
+      });
+    });
+  });
+
+  // FAQ toggle
   function toggleFaq(el) {
     var item = el.parentElement;
     var isOpen = item.classList.contains('open');
