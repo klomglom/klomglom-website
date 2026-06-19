@@ -52,7 +52,11 @@
     .nav-links { display: flex; align-items: center; gap: 24px; }
     .nav-links a { text-decoration: none; color: var(--text-soft); font-weight: 500; font-size: 17px; transition: color .2s; }
     .nav-links a:hover { color: var(--amber); }
-    .btn-line-nav { background: #06C755; color: white; padding: 9px 20px; border-radius: 50px; font-weight: 700; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .btn-line-nav { background: #06C755; color: white !important; padding: 9px 20px; border-radius: 50px; font-weight: 700; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+    .nav-links.open { display: flex !important; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: #FFF8EE; padding: 20px 24px; border-bottom: 1px solid #F0D9A8; box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 99; }
+    @media (max-width: 700px) { .nav-links { display: none; } .hamburger { display: flex; } }
 
     /* BREADCRUMB */
     .breadcrumb { background: var(--cream); padding: 12px 24px; border-bottom: 1px solid #F0D9A8; font-size: 15px; color: var(--text-soft); }
@@ -138,8 +142,17 @@
       <a href="/order/">วิธีสั่งซื้อ</a>
       <a href="https://lin.ee/S5pOnxl" class="btn-line-nav" target="_blank" rel="noopener">💬 LINE @klomglom</a>
     </div>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
   </div>
 </nav>
+<script>
+  function toggleNav() { document.querySelector('.nav-links').classList.toggle('open'); }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.nav-links a').forEach(function(l) {
+      l.addEventListener('click', function() { document.querySelector('.nav-links').classList.remove('open'); });
+    });
+  });
+</script>
 
 <div class="breadcrumb">
   <div style="max-width:1100px;margin:0 auto;">
@@ -238,7 +251,7 @@
 
     <h2>ซุปไก่ตุ๋นเหมาะกับใครบ้าง?</h2>
     <ul>
-      <li><strong>ผู้สูงอายุ 55 ปีขึ้นไป</strong> — ย่อยง่าย บำรุงร่างกาย เสริมภูมิคุ้มกัน</li>
+      <li><strong>ผู้สูงอายุที่มีอายุมากขึ้น</strong> — ย่อยง่าย บำรุงร่างกาย เสริมภูมิคุ้มกัน</li>
       <li><strong>คนพักฟื้นหลังป่วยหรือผ่าตัด</strong> — ฟื้นฟูร่างกายได้เร็ว โปรตีนสูง</li>
       <li><strong>คุณแม่หลังคลอด</strong> — บำรุงเลือด ฟื้นฟูพลังงาน</li>
       <li><strong>คนทำงานที่อ่อนเพลีย</strong> — เติมพลังงานและสารอาหารที่ขาดไป</li>
@@ -251,7 +264,7 @@
       ไม่ใช่ซุปไก่ทุกถ้วยที่ให้ประโยชน์เท่ากัน ควรเลือกซุปที่:
     </p>
     <ul>
-      <li>ใช้ไก่บ้านจริง ไม่ใช่ไก่เลี้ยงในโรงงาน</li>
+      <li>ใช้ไก่บ้านคุณภาพ มีปริมาณไขมันน้อยกว่า</li>
       <li>ใช้สมุนไพรจีนแท้ ไม่ใช่สารสังเคราะห์</li>
       <li><strong>ไม่ใส่ผงปรุงรส ไม่ใส่เกลือ ไม่ใส่น้ำตาล</strong> — รสชาติมาจากวัตถุดิบล้วนๆ</li>
       <li>เคี่ยวนาน 5 ชั่วโมง จนสารอาหารออกมาครบถ้วน</li>
