@@ -51,7 +51,11 @@
     .nav-links { display: flex; align-items: center; gap: 24px; }
     .nav-links a { text-decoration: none; color: var(--text-soft); font-weight: 500; font-size: 17px; transition: color .2s; }
     .nav-links a:hover { color: var(--amber); }
-    .btn-line-nav { background: #06C755; color: white; padding: 9px 20px; border-radius: 50px; font-weight: 700; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .btn-line-nav { background: #06C755; color: white !important; padding: 9px 20px; border-radius: 50px; font-weight: 700; font-size: 16px; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+    .nav-links.open { display: flex !important; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: #FFF8EE; padding: 20px 24px; border-bottom: 1px solid #F0D9A8; box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 99; }
+    @media (max-width: 700px) { .nav-links { display: none; } .hamburger { display: flex; } }
 
     .breadcrumb { background: var(--cream); padding: 12px 24px; border-bottom: 1px solid #F0D9A8; font-size: 15px; color: var(--text-soft); }
     .breadcrumb a { color: var(--amber); text-decoration: none; }
@@ -138,8 +142,17 @@
       <a href="/blog/get-well-gift/">ของเยี่ยมไข้</a>
       <a href="https://lin.ee/S5pOnxl" class="btn-line-nav" target="_blank" rel="noopener">💬 LINE @klomglom</a>
     </div>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
   </div>
 </nav>
+<script>
+  function toggleNav() { document.querySelector('.nav-links').classList.toggle('open'); }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.nav-links a').forEach(function(l) {
+      l.addEventListener('click', function() { document.querySelector('.nav-links').classList.remove('open'); });
+    });
+  });
+</script>
 
 <div class="breadcrumb">
   <div style="max-width:1100px;margin:0 auto;">
@@ -210,14 +223,14 @@
         <div class="step-num">1</div>
         <div class="step-content">
           <h3>เพิ่มเพื่อน LINE @klomglom</h3>
-          <p>กด <a href="https://lin.ee/S5pOnxl" target="_blank" rel="noopener">ลิ้งนี้</a> หรือค้นหา @klomglom ใน LINE แล้วกดเพิ่มเพื่อน — ฟรี ไม่มีค่าใช้จ่าย</p>
+          <p>กด <a href="https://lin.ee/S5pOnxl" target="_blank" rel="noopener">ที่นี่</a> หรือค้นหา @klomglom ใน LINE แล้วกดเพิ่มเพื่อน — ฟรี ไม่มีค่าใช้จ่าย</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-content">
           <h3>ส่งข้อความเลือกแพ็กเกจ</h3>
-          <p>บอกว่าต้องการแพ็กเกจไหน (1 / 4 / 8 ถ้วย) และที่อยู่จัดส่ง — ทีมจะตอบกลับภายใน 1 ชั่วโมง (เวลาทำการ 9:00–21:00)</p>
+          <p>แจ้งแพ็กเกจที่ต้องการ (3 / 6 / 12 ถ้วย) และที่อยู่จัดส่ง — ทางทีมงานจะรีบยืนยันรายการ และแจ้งข้อมูลการชำระเงิน</p>
         </div>
       </div>
       <div class="step">
@@ -251,7 +264,7 @@
       </div>
       <div class="faq-item">
         <h3>กินอุ่นหรือเย็นได้ไหม?</h3>
-        <p>แนะนำอุ่นร้อนก่อนดื่มครับ — ใส่หม้อตั้งไฟอ่อนประมาณ 3–5 นาที หรือใส่ถ้วยไมโครเวฟ 2 นาที จะได้รสชาติดีที่สุด</p>
+        <p>แนะนำอุ่นร้อนก่อนรับประทานครับ — สามารถอุ่นโดยเทใส่หม้อตั้งไฟอ่อน หรืออุ่นด้วยไมโครเวฟจนเดือด แค่นี้ก็พร้อมรับประทานได้ทันที</p>
       </div>
       <div class="faq-item">
         <h3>เหมาะกับคนเป็นเบาหวาน / ความดันไหม?</h3>
@@ -259,7 +272,7 @@
       </div>
       <div class="faq-item">
         <h3>สั่งเป็นของขวัญ ส่งตรงถึงบ้านคนรับได้ไหม?</h3>
-        <p>ได้เลยครับ แจ้งที่อยู่ผู้รับใน LINE ทีมจะจัดเตรียมกล่องของขวัญและส่งตรงถึงบ้านคนรับ พร้อมการ์ดอวยพรถ้าต้องการ</p>
+        <p>ได้เลยครับ เพียงแจ้งชื่อ เบอร์โทร และที่อยู่ผู้รับทาง LINE ทีมงานจะจัดเตรียมซุปไก่ตุ๋นคุณภาพ พร้อมแพ็กให้อย่างดี และจัดส่งตรงถึงบ้านผู้รับ เพื่อส่งต่อความห่วงใยแทนคุณ</p>
       </div>
     </div>
   </div>
