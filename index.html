@@ -9,6 +9,19 @@
     gtag('js', new Date());
     gtag('config', 'AW-17374456168');
   </script>
+  <!-- Google tag (gtag.js) event - delayed navigation helper -->
+  <script>
+    function gtagSendEvent(url) {
+      var callback = function () {
+        if (typeof url === 'string') { window.location = url; }
+      };
+      gtag('event', 'manual_event_PAGE_VIEW', {
+        'event_callback': callback,
+        'event_timeout': 2000,
+      });
+      return false;
+    }
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -629,7 +642,7 @@
       <a href="/blog/soup-benefits/">ประโยชน์ซุปไก่</a>
       <a href="/blog/get-well-gift/">ของเยี่ยมไข้</a>
       <a href="/order/">สั่งซื้อ</a>
-      <a href="https://lin.ee/S5pOnxl" class="btn-line-nav" target="_blank" rel="noopener">
+      <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-line-nav" target="_blank" rel="noopener">
         💬 LINE @klomglom
       </a>
     </div>
@@ -659,7 +672,7 @@
         <span class="hero-badge-item">🚚 ส่งทั่วไทย</span>
       </div>
       <div class="hero-cta">
-        <a href="https://lin.ee/S5pOnxl" class="btn-line" target="_blank" rel="noopener">
+        <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-line" target="_blank" rel="noopener">
           💬 สั่งซื้อผ่าน LINE
         </a>
         <a href="#pricing" class="btn-outline">ดูราคา →</a>
@@ -917,7 +930,7 @@
           <li>ส่งทั่วประเทศ</li>
           <li>เหมาะสำหรับทดลองชิม</li>
         </ul>
-        <a href="https://lin.ee/S5pOnxl" class="btn-outline" target="_blank" rel="noopener">สั่งชุดนี้</a>
+        <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-outline" target="_blank" rel="noopener">สั่งชุดนี้</a>
       </div>
 
       <div class="price-card popular">
@@ -933,7 +946,7 @@
           <li>ส่งทั่วประเทศ</li>
           <li>เหมาะเป็นของเยี่ยมไข้</li>
         </ul>
-        <a href="https://lin.ee/S5pOnxl" class="btn-primary" target="_blank" rel="noopener">สั่งชุดนี้ →</a>
+        <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-primary" target="_blank" rel="noopener">สั่งชุดนี้ →</a>
       </div>
 
       <div class="price-card">
@@ -948,7 +961,7 @@
           <li>ส่งทั่วประเทศ</li>
           <li>คุ้มที่สุด สำหรับทานต่อเนื่อง</li>
         </ul>
-        <a href="https://lin.ee/S5pOnxl" class="btn-outline" target="_blank" rel="noopener">สั่งชุดนี้</a>
+        <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-outline" target="_blank" rel="noopener">สั่งชุดนี้</a>
       </div>
 
     </div>
@@ -1039,7 +1052,7 @@
       </div>
     </div>
     <div style="text-align:center; margin-top: 48px;">
-      <a href="https://lin.ee/S5pOnxl" class="btn-line" target="_blank" rel="noopener">
+      <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-line" target="_blank" rel="noopener">
         💬 แอด LINE เพื่อสั่งซื้อเลย
       </a>
     </div>
@@ -1113,7 +1126,7 @@
     <h2>พร้อมมอบความใส่ใจ<br />ให้คนที่คุณรัก?</h2>
     <p>สั่งซุปไก่บำรุงสุขภาพ กลมกล่อม วันนี้ — ส่งถึงบ้านพร้อมบรรจุภัณฑ์เก็บความเย็น</p>
     <div class="cta-btns">
-      <a href="https://lin.ee/S5pOnxl" class="btn-line-cta" target="_blank" rel="noopener">
+      <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-line-cta" target="_blank" rel="noopener">
         💬 สั่งซื้อผ่าน LINE @klomglom
       </a>
       <a href="https://www.facebook.com/klomglom" class="btn-fb-cta" target="_blank" rel="noopener">
@@ -1133,7 +1146,7 @@
         ไม่ใส่ผงปรุงรส เพื่อสุขภาพที่ดีของคุณและคนที่คุณรัก
       </p>
       <div class="footer-social">
-        <a href="https://lin.ee/S5pOnxl" class="social-btn" target="_blank" rel="noopener" title="LINE">💬</a>
+        <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="social-btn" target="_blank" rel="noopener" title="LINE">💬</a>
         <a href="https://www.facebook.com/klomglom" class="social-btn" target="_blank" rel="noopener" title="Facebook">f</a>
       </div>
     </div>
@@ -1148,7 +1161,7 @@
     <div class="footer-col">
       <h4>ติดต่อเรา</h4>
       <ul>
-        <li><a href="https://lin.ee/S5pOnxl" target="_blank" rel="noopener">LINE: @klomglom</a></li>
+        <li><a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" target="_blank" rel="noopener">LINE: @klomglom</a></li>
         <li><a href="https://www.facebook.com/klomglom" target="_blank" rel="noopener">Facebook: klomglom</a></li>
         <li><a href="https://www.klomglom.com">www.klomglom.com</a></li>
       </ul>

@@ -9,6 +9,19 @@
     gtag('js', new Date());
     gtag('config', 'AW-17374456168');
   </script>
+  <!-- Google tag (gtag.js) event - delayed navigation helper -->
+  <script>
+    function gtagSendEvent(url) {
+      var callback = function () {
+        if (typeof url === 'string') { window.location = url; }
+      };
+      gtag('event', 'manual_event_PAGE_VIEW', {
+        'event_callback': callback,
+        'event_timeout': 2000,
+      });
+      return false;
+    }
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>วิธีสั่งซื้อซุปไก่กลมกล่อม ราคาและแพ็กเกจ | กลมกล่อม</title>
@@ -149,7 +162,7 @@
       <a href="/#pricing">ราคา</a>
       <a href="/blog/soup-benefits/">ประโยชน์ซุปไก่</a>
       <a href="/blog/get-well-gift/">ของเยี่ยมไข้</a>
-      <a href="https://lin.ee/S5pOnxl" class="btn-line-nav" target="_blank" rel="noopener">💬 LINE @klomglom</a>
+      <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-line-nav" target="_blank" rel="noopener">💬 LINE @klomglom</a>
     </div>
     <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
   </div>
@@ -191,7 +204,7 @@
           <li>แพ็กเก็บความเย็น</li>
           <li>เหมาะลองก่อนสั่งเยอะ</li>
         </ul>
-        <a href="https://lin.ee/S5pOnxl" class="btn-order" target="_blank" rel="noopener">สั่งเลย</a>
+        <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-order" target="_blank" rel="noopener">สั่งเลย</a>
       </div>
 
       <div class="price-card featured">
@@ -205,7 +218,7 @@
           <li>แพ็กเก็บความเย็น</li>
           <li>เหมาะกิน 2 สัปดาห์</li>
         </ul>
-        <a href="https://lin.ee/S5pOnxl" class="btn-order" target="_blank" rel="noopener">สั่งเลย</a>
+        <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-order" target="_blank" rel="noopener">สั่งเลย</a>
       </div>
 
       <div class="price-card">
@@ -218,7 +231,7 @@
           <li>แพ็กเก็บความเย็น</li>
           <li>เหมาะกิน 1 เดือน</li>
         </ul>
-        <a href="https://lin.ee/S5pOnxl" class="btn-order" target="_blank" rel="noopener">สั่งเลย</a>
+        <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-order" target="_blank" rel="noopener">สั่งเลย</a>
       </div>
 
     </div>
@@ -232,7 +245,7 @@
         <div class="step-num">1</div>
         <div class="step-content">
           <h3>เพิ่มเพื่อน LINE @klomglom</h3>
-          <p>กด <a href="https://lin.ee/S5pOnxl" target="_blank" rel="noopener">ที่นี่</a> หรือค้นหา @klomglom ใน LINE แล้วกดเพิ่มเพื่อน — ฟรี ไม่มีค่าใช้จ่าย</p>
+          <p>กด <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" target="_blank" rel="noopener">ที่นี่</a> หรือค้นหา @klomglom ใน LINE แล้วกดเพิ่มเพื่อน — ฟรี ไม่มีค่าใช้จ่าย</p>
         </div>
       </div>
       <div class="step">
@@ -290,7 +303,7 @@
   <div class="main-cta">
     <h2>พร้อมสั่งแล้ว?</h2>
     <p>ทางกลมกล่อมยินดีให้บริการ ตอบทุกข้อสงสัย<br/>สามารถสอบถามได้ทาง LINE ทุกวัน เวลา 9:00–18:00 น.</p>
-    <a href="https://lin.ee/S5pOnxl" class="btn-line-main" target="_blank" rel="noopener">
+    <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-line-main" target="_blank" rel="noopener">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.63 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
       สั่งซื้อได้ที่ LINE: @klomglom
     </a>
@@ -306,7 +319,7 @@
       <a href="/blog/soup-benefits/">ประโยชน์ซุปไก่</a>
       <a href="/blog/get-well-gift/">ของเยี่ยมไข้</a>
       <a href="/order/">สั่งซื้อ</a>
-      <a href="https://lin.ee/S5pOnxl" target="_blank" rel="noopener">LINE</a>
+      <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" target="_blank" rel="noopener">LINE</a>
     </div>
   </div>
   <div class="footer-bottom">© 2025 กลมกล่อม | ซุปไก่บำรุงสุขภาพ</div>

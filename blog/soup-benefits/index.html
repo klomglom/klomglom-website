@@ -9,6 +9,19 @@
     gtag('js', new Date());
     gtag('config', 'AW-17374456168');
   </script>
+  <!-- Google tag (gtag.js) event - delayed navigation helper -->
+  <script>
+    function gtagSendEvent(url) {
+      var callback = function () {
+        if (typeof url === 'string') { window.location = url; }
+      };
+      gtag('event', 'manual_event_PAGE_VIEW', {
+        'event_callback': callback,
+        'event_timeout': 2000,
+      });
+      return false;
+    }
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ซุปไก่ตุ๋นบำรุงสุขภาพ มีประโยชน์อะไรบ้าง? 6 คุณค่าที่ร่างกายได้รับ | กลมกล่อม</title>
@@ -148,7 +161,7 @@
       <a href="/#pricing">ราคา</a>
       <a href="/blog/get-well-gift/">ของเยี่ยมไข้</a>
       <a href="/order/">วิธีสั่งซื้อ</a>
-      <a href="https://lin.ee/S5pOnxl" class="btn-line-nav" target="_blank" rel="noopener">💬 LINE @klomglom</a>
+      <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-line-nav" target="_blank" rel="noopener">💬 LINE @klomglom</a>
     </div>
     <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
   </div>
@@ -281,7 +294,7 @@
     <div class="cta-box">
       <h3>ลองชิมซุปไก่ตุ๋นกลมกล่อม</h3>
       <p>เคี่ยวช้า 5 ชั่วโมง ไก่บ้านคัดพิเศษ สมุนไพรจีนแท้ ไม่ปรุงรสใดๆ<br/>ส่งพร้อมแพ็กเกจเก็บความเย็นทั่วประเทศไทย</p>
-      <a href="https://lin.ee/S5pOnxl" class="btn-line-cta" target="_blank" rel="noopener">💬 สั่งผ่าน LINE @klomglom</a>
+      <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" class="btn-line-cta" target="_blank" rel="noopener">💬 สั่งผ่าน LINE @klomglom</a>
     </div>
 
     <div class="related">
@@ -309,7 +322,7 @@
       <a href="/blog/soup-benefits/">ประโยชน์ซุปไก่</a>
       <a href="/blog/get-well-gift/">ของเยี่ยมไข้</a>
       <a href="/order/">สั่งซื้อ</a>
-      <a href="https://lin.ee/S5pOnxl" target="_blank" rel="noopener">LINE</a>
+      <a href="https://lin.ee/S5pOnxl" onclick="return gtagSendEvent('https://lin.ee/S5pOnxl')" target="_blank" rel="noopener">LINE</a>
     </div>
   </div>
   <div class="footer-bottom">© 2025 กลมกล่อม | ซุปไก่บำรุงสุขภาพ</div>
