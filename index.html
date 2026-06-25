@@ -15,6 +15,7 @@
       var callback = function () {
         if (typeof url === 'string') { window.location = url; }
       };
+      gtag('event', 'click_line');
       gtag('event', 'manual_event_PAGE_VIEW', {
         'event_callback': callback,
         'event_timeout': 2000,
@@ -474,6 +475,36 @@
     .review-name { font-weight: 700; color: var(--brown); font-size: 17px; }
     .review-role { font-size: 14px; color: var(--text-soft); }
 
+    /* ========== ORDER PROOF ========== */
+    .order-proof { margin-top: 60px; }
+    .order-proof-label {
+      text-align: center; font-size: 15px; font-weight: 600;
+      color: var(--brown); text-transform: uppercase; letter-spacing: .08em;
+      margin-bottom: 8px;
+    }
+    .order-proof-title {
+      text-align: center; font-size: 22px; font-weight: 700;
+      color: var(--brown); margin-bottom: 32px;
+    }
+    .chat-screens {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px; align-items: start;
+    }
+    .chat-frame {
+      background: white; border-radius: 20px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.10);
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,.06);
+    }
+    .chat-frame img {
+      width: 100%; display: block;
+      border-radius: 20px;
+    }
+    .chat-caption {
+      text-align: center; font-size: 13px; color: var(--text-soft);
+      margin-top: 10px; padding: 0 4px;
+    }
+
     /* ========== HOW TO ORDER ========== */
     .how-to { background: white; }
     .steps {
@@ -605,6 +636,7 @@
       .hero-inner, .benefits-inner, .who-grid, .footer-inner { grid-template-columns: 1fr; }
       .why-grid, .pricing-grid, .steps { grid-template-columns: 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
+      .chat-screens { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
       .gallery-grid { grid-template-columns: repeat(2,1fr); }
       .hero-img-wrap { order: -1; }
       .hero-img-wrap img { aspect-ratio: 4/3; object-position: top center; }
@@ -1025,6 +1057,39 @@
       </div>
 
     </div>
+
+    <!-- ORDER PROOF: real chat screenshots -->
+    <div class="order-proof">
+      <p class="order-proof-label">📦 หลักฐานการสั่งซื้อ</p>
+      <h3 class="order-proof-title">บทสนทนาจริงจากลูกค้าที่รับซุปเรียบร้อย</h3>
+      <div class="chat-screens">
+        <div>
+          <div class="chat-frame">
+            <img src="https://res.cloudinary.com/dhumt7lee/image/upload/v1782365252/Testimony1_ngjfpz.jpg"
+                 alt="ลูกค้าส่งรูปซุปไก่กลมกล่อมที่ได้รับ พร้อมยืนยันรับสินค้าครบเรียบร้อย"
+                 loading="lazy" width="944" height="2048" />
+          </div>
+          <p class="chat-caption">ลูกค้าส่งรูปซุปกลับมา — รับครบ สินค้าเรียบร้อยค่ะ</p>
+        </div>
+        <div>
+          <div class="chat-frame">
+            <img src="https://res.cloudinary.com/dhumt7lee/image/upload/v1782365252/Testimony2_njlypy.jpg"
+                 alt="ลูกค้าแจ้งได้รับซุปไก่กลมกล่อมเรียบร้อย ผ่าน Facebook Messenger"
+                 loading="lazy" width="852" height="1846" />
+          </div>
+          <p class="chat-caption">ได้รับเรียบร้อยตั้งแต่เช้า — ขอบคุณที่อุดหนุนค่ะ</p>
+        </div>
+        <div>
+          <div class="chat-frame">
+            <img src="https://res.cloudinary.com/dhumt7lee/image/upload/v1782365252/Testimony3_ruiu85.jpg"
+                 alt="ลูกค้ายืนยันรับซุปไก่กลมกล่อมจาก Lalamove เรียบร้อย"
+                 loading="lazy" width="852" height="1846" />
+          </div>
+          <p class="chat-caption">รับเรียบร้อยค่า ขอบคุณค่ะ — ส่งทาง Lalamove</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 

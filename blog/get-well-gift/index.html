@@ -15,6 +15,7 @@
       var callback = function () {
         if (typeof url === 'string') { window.location = url; }
       };
+      gtag('event', 'click_line');
       gtag('event', 'manual_event_PAGE_VIEW', {
         'event_callback': callback,
         'event_timeout': 2000,
